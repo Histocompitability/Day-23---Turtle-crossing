@@ -16,8 +16,10 @@ class Player(Turtle):
 
     def move(self):
         self.fd(MOVE_DISTANCE)
+
+    def check_level_up(self):
         if self.position()[1] >= FINISH_LINE_Y:
-            #todo should increase_difficulty = True?
             self.goto(STARTING_POSITION)
+            return True
 
 
