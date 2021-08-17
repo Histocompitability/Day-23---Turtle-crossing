@@ -8,14 +8,13 @@ NUMBER_OR_CARS = 30
 
 class CarManager:
     def __init__(self):
-        self.car_bank = []
         self.car_speed = STARTING_MOVE_DISTANCE
-        for i in range (NUMBER_OR_CARS):
+        self.car_bank = []
+        for i in range(NUMBER_OR_CARS):
             c = Car()
             c.custom_x_position = random.randint(-280, 320)
             c.goto(c.custom_x_position, random.randint(-12, 12)*20)
             self.car_bank.append(c)
-
 
     def move(self):
         for car in self.car_bank:
@@ -27,19 +26,13 @@ class CarManager:
         self.car_speed += MOVE_INCREMENT
 
 
-
-
-
 class Car(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("square")
         self.penup()
-        self.shapesize(stretch_wid=0.75, stretch_len= 2)
+        self.shapesize(stretch_wid=0.75, stretch_len=2)
         self.color(random.choice(COLORS))
-
-
-
 
 
 '''
